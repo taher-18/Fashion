@@ -8,7 +8,7 @@ export default async function AddPage() {
     <main className="px-4 pt-[max(1rem,env(safe-area-inset-top))]">
       <h1 className="text-2xl font-semibold tracking-tight">Add item</h1>
       <p className="mb-5 mt-1 text-sm text-neutral-500 dark:text-neutral-400">Snap it, auto-tag or fill in the basics, save.</p>
-      <ItemForm ai={aiStatus()} />
+      <ItemForm ai={await aiStatus()} />
     </main>
   );
 }

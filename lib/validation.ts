@@ -67,3 +67,50 @@ export const WearBody = z.object({
 });
 
 export const RateBody = z.object({ rating: z.union([z.literal(-1), z.literal(0), z.literal(1)]) });
+
+export const OCCASION_ID_RE = /^[a-z0-9_]{1,40}$/;
+
+export const OccasionInput = z.object({
+  id: z.string().regex(OCCASION_ID_RE).optional(),
+  label: z.string().trim().min(1, "Give it a name").max(60),
+  target_formality: z.number().min(1).max(5).multipleOf(0.5),
+  strict: z.boolean(),
+  indoor: z.boolean(),
+  notes: optionalText(200),
+});
+
+/** Accepts the app's own export file, or the seed format ({ items: [...] } without ids). */
+export const ImportFile = z.object({
+  occasions: z
+    .array(
+      OccasionInput.extend({
+        id: z.string().regex(OCCASION_ID_RE),
+        sort_order: z.number().int().optional(),
+      }),
+    )
+    .optional(),
+  items: z
+    .array(
+      ItemCreate.extend({
+        id: z.uuid().optional(),
+        created_at: z.string().optional(),
+        photo_path: z.string().regex(PHOTO_PATH_RE).nullable().optional().catch(null),
+      }),
+    )
+    .max(2000)
+    .optional(),
+  outfits_worn: z
+    .array(
+      z.object({
+        id: z.uuid().optional(),
+        item_ids: z.array(z.uuid()).min(1).max(12),
+        occasion_id: z.string().nullable(),
+        weather: z.enum(WEATHERS).nullable(),
+        rating: z.union([z.literal(-1), z.literal(0), z.literal(1)]).nullable(),
+        worn_on: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+        created_at: z.string().optional(),
+      }),
+    )
+    .max(10000)
+    .optional(),
+});

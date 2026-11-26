@@ -10,7 +10,7 @@ export const maxDuration = 60;
 export async function POST(req: Request) {
   const denied = await requireLogin();
   if (denied) return denied;
-  const status = aiStatus();
+  const status = await aiStatus();
   if (!status.enabled) return NextResponse.json({ error: `AI is off. ${status.reason}`, ai_off: true }, { status: 503 });
 
   const photo = await readJpeg(await req.formData().catch(() => null));

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Suspense } from "react";
-import { CloudSun, Snowflake, Sun, SunDim } from "lucide-react";
+import { CloudSun, Settings, Snowflake, Sun, SunDim } from "lucide-react";
 import AnchorPicker from "@/components/AnchorPicker";
 import OutfitCards from "@/components/OutfitCards";
 import { dbConfigured } from "@/lib/db/client";
@@ -53,8 +53,19 @@ export default async function TodayPage({ searchParams }: { searchParams: SP }) 
 
   return (
     <main className="px-4 pt-[max(1rem,env(safe-area-inset-top))]">
-      <h1 className="text-2xl font-semibold tracking-tight">Today</h1>
-      <p className="text-sm text-neutral-500 dark:text-neutral-400">{today}</p>
+      <div className="flex items-start justify-between gap-3">
+        <div>
+          <h1 className="text-2xl font-semibold tracking-tight">Today</h1>
+          <p className="text-sm text-neutral-500 dark:text-neutral-400">{today}</p>
+        </div>
+        <Link
+          href="/settings"
+          aria-label="Settings"
+          className="flex size-11 items-center justify-center rounded-full border border-neutral-200 text-neutral-600 dark:border-neutral-800 dark:text-neutral-300"
+        >
+          <Settings className="size-5" aria-hidden />
+        </Link>
+      </div>
 
       <section className="mt-5">
         <h2 className="mb-2 text-sm font-semibold">Where to?</h2>

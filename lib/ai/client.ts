@@ -1,17 +1,31 @@
 // Server-only Claude client. AI is "on" only when both ANTHROPIC_API_KEY and ANTHROPIC_MODEL are set.
 
 import Anthropic from "@anthropic-ai/sdk";
+import { cookies } from "next/headers";
 import type { z } from "zod";
 import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod";
 
 export type AiStatus = { enabled: true } | { enabled: false; reason: string };
 
-export function aiStatus(): AiStatus {
+/** Per-device switch set on the Settings screen (a cookie, so no database change is needed). */
+export const AI_COOKIE = "closet_ai";
+
+/** Whether a key and model are configured, ignoring the Settings switch. */
+export function aiConfigured(): AiStatus {
   if (!process.env.ANTHROPIC_API_KEY) {
     return { enabled: false, reason: "Add ANTHROPIC_API_KEY to .env.local to turn it on." };
   }
   if (!process.env.ANTHROPIC_MODEL) {
     return { enabled: false, reason: "Add ANTHROPIC_MODEL to .env.local (for example claude-sonnet-5-5)." };
+  }
+  return { enabled: true };
+}
+
+export async function aiStatus(): Promise<AiStatus> {
+  const configured = aiConfigured();
+  if (!configured.enabled) return configured;
+  if ((await cookies()).get(AI_COOKIE)?.value === "off") {
+    return { enabled: false, reason: "Turn it back on in Settings." };
   }
   return { enabled: true };
 }
@@ -51,8 +65,8 @@ type AskOptions<S extends z.ZodType> = {
  * Retries once on a parse failure or truncated output, then gives a friendly error.
  */
 export async function askJson<S extends z.ZodType>(opts: AskOptions<S>): Promise<z.output<S>> {
-  const status = aiStatus();
-  if (!status.enabled) throw new AiError(status.reason, 503);
+  const status = await aiStatus();
+  if (!status.enabled) throw new AiError(`AI is off. ${status.reason}`, 503);
   const model = process.env.ANTHROPIC_MODEL as string;
 
   for (let attempt = 1; attempt <= 2; attempt++) {

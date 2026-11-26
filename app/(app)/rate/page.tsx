@@ -8,7 +8,7 @@ import { shortLabel } from "@/lib/engine/rules";
 
 export default async function RatePage() {
   await connection(); // read the AI env at request time, not build time
-  const ai = aiStatus();
+  const ai = await aiStatus();
 
   return (
     <main className="px-4 pt-[max(1rem,env(safe-area-inset-top))]">
