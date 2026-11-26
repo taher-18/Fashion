@@ -15,6 +15,8 @@ export const metadata: Metadata = {
   // iPhone "Add to Home Screen": open full-screen with the status bar over the app.
   appleWebApp: { capable: true, title: "Closet", statusBarStyle: "black-translucent" },
   formatDetection: { telephone: false },
+  // Private app on a public URL: keep it out of search engines.
+  robots: { index: false, follow: false },
 };
 
 export const viewport: Viewport = {

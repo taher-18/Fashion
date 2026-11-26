@@ -1,7 +1,7 @@
 // Builds every valid outfit for the weather, scores it, applies history,
 // and returns the top N that differ from each other by at least 2 pieces. Pure, no I/O.
 
-import { CATEGORY_LABELS, type Category, type Weather } from "../types.ts";
+import type { Category, Weather } from "../types.ts";
 import { clothing, isFleece, scoreOutfit, shortLabel } from "./rules.ts";
 import type { EngineItem, EngineOccasion, HistoryEntry, Outfit, Reason, ScoredOutfit, SuggestInput, SuggestResult } from "./types.ts";
 
@@ -21,6 +21,16 @@ const PLANS: Record<Weather, Plan[]> = {
 };
 
 const isLightJacket = (j: EngineItem) => j.warmth <= 3;
+
+/** How to name a missing piece in the "No outfits" message. */
+const NEED: Record<Category, string> = {
+  base: "top",
+  mid: "mid layer",
+  jacket: "jacket",
+  pants: "pair of pants",
+  shoes: "pair of shoes",
+  accessory: "accessory",
+};
 
 /** Hard bans for strict occasions (Her family): these pieces can never appear. */
 export function isBanned(item: EngineItem, occ: EngineOccasion): boolean {
@@ -128,12 +138,17 @@ export function suggestOutfits(input: SuggestInput): SuggestResult {
     if (plans.every((p) => p.mid)) needed.push("mid");
     if (plans.every((p) => p.jacket === "any")) needed.push("jacket");
     const missing = needed.find((c) => by(c).length === 0);
-    if (missing) return empty(`No outfits: you need at least one ${CATEGORY_LABELS[missing].toLowerCase()} piece that's not in the wash.`);
+    if (missing) return empty(`No outfits: you need at least one ${NEED[missing]} that's not in the wash.`);
     return empty(`No outfits for ${weather} weather: you need a mid layer or a light jacket that's not in the wash.`);
   }
 
+  // Build around: every outfit must contain the chosen piece. Mild weather has two layer plans
+  // (mid layer OR light jacket) and the piece only belongs to one, so filter explicitly.
+  const mustHave = anchor && anchor.category !== "accessory" ? anchor.id : null;
+  const kept = mustHave ? candidates.filter((c) => clothing(c).some((i) => i.id === mustHave)) : candidates;
+
   // Score, apply history, rank
-  const scored = candidates.map((o) => {
+  const scored = kept.map((o) => {
     const { score, reasons } = scoreOutfit(o, occ, weather);
     const hist = historyReasons(o, history);
     const total = score + hist.reduce((s, r) => s + r.points, 0);

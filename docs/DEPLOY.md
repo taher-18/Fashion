@@ -56,5 +56,6 @@ The app works without this. Only Auto-tag and Rate my fit need it.
 ## Later changes
 
 - Every push to `main` on GitHub redeploys automatically.
+- To sign out every device (for example a lost phone): change `SESSION_SECRET` in Vercel and redeploy. Changing only `APP_PASSWORD` keeps existing logins valid for up to 30 days.
 - To change a setting (for example the AI model): Vercel → Settings → Environment Variables → edit → **Redeploy**.
 - Free Supabase projects pause after about a week with no use. If the app says it can't reach the database, open the Supabase dashboard and click **Restore**.

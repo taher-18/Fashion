@@ -134,6 +134,30 @@ test("Build around keeps the anchor in every pick, and refuses a jacket on a hot
   assert.match(hot.emptyReason ?? "", /doesn't fit hot weather/);
 });
 
+test("Build around keeps a mid layer in every pick on a mild day (regression)", () => {
+  // Mild allows "mid layer OR light jacket"; the chosen mid must not be dropped for a jacket outfit.
+  for (const [piece, occ] of [
+    ["Navy Tommy Hilfiger sweatshirt", "date"],
+    ["Black Tommy Jeans zip hoodie", "friends"],
+  ] as const) {
+    const anchor = item(piece);
+    const res = suggestOutfits({ items: seed, occasion: occasion(occ), weather: "mild", anchorId: anchor.id });
+    assert.equal(res.outfits.length, 3, `${piece}: expected 3 picks`);
+    for (const o of res.outfits) assert.ok(o.itemIds.includes(anchor.id), `${piece} missing from a pick`);
+  }
+  // A low-scoring piece is still kept when you ask for it
+  const joggersAnchor = suggestOutfits({ items: seed, occasion: occasion("friends"), weather: "warm", anchorId: joggers.id });
+  for (const o of joggersAnchor.outfits) assert.equal(o.outfit.pants.id, joggers.id);
+});
+
+test("empty and thin closets explain what's missing in plain words", () => {
+  assert.match(suggestOutfits({ items: [], occasion: occasion("date"), weather: "mild" }).emptyReason ?? "", /at least one top that's not in the wash/);
+  const noShoes = seed.map((i) => (i.category === "shoes" ? { ...i, in_wash: true } : i));
+  assert.match(suggestOutfits({ items: noShoes, occasion: occasion("date"), weather: "mild" }).emptyReason ?? "", /pair of shoes/);
+  const noJackets = seed.filter((i) => i.category !== "jacket");
+  assert.match(suggestOutfits({ items: noJackets, occasion: occasion("friends"), weather: "cold" }).emptyReason ?? "", /at least one jacket/);
+});
+
 test("history: recent repeats lose points, thumbs up wins points", () => {
   const date = occasion("date");
   const base = suggestOutfits({ items: seed, occasion: date, weather: "mild" }).outfits[0];
