@@ -4,6 +4,7 @@ Taher's personal stylist app. Save your clothes, say where you're going and what
 
 - Rules for building it: [`CLAUDE.md`](CLAUDE.md)
 - Features, screens, data model and phases: [`docs/SPEC.md`](docs/SPEC.md)
+- **Going live:** [`docs/DEPLOY.md`](docs/DEPLOY.md), the step-by-step Vercel checklist
 - The styling rules the outfit engine follows: [`docs/STYLE_RULES.md`](docs/STYLE_RULES.md)
 - Seed closet: [`docs/seed/wardrobe.json`](docs/seed/wardrobe.json)
 
