@@ -1,0 +1,513 @@
+{
+  "items": [
+    {
+      "name": "White tee",
+      "brand": null,
+      "category": "base",
+      "subtype": "tee",
+      "color": "white",
+      "formality": 2,
+      "warmth": 1,
+      "fit": null,
+      "flags": [],
+      "notes": "Go-to under zip hoodies",
+      "needs_confirm": false
+    },
+    {
+      "name": "Black Tommy Hilfiger tee",
+      "brand": "Tommy Hilfiger",
+      "category": "base",
+      "subtype": "tee",
+      "color": "black",
+      "formality": 2,
+      "warmth": 1,
+      "fit": null,
+      "flags": [
+        "logo_big"
+      ],
+      "notes": null,
+      "needs_confirm": false
+    },
+    {
+      "name": "Navy Tommy Hilfiger New York tee",
+      "brand": "Tommy Hilfiger",
+      "category": "base",
+      "subtype": "tee",
+      "color": "navy",
+      "formality": 2,
+      "warmth": 1,
+      "fit": null,
+      "flags": [],
+      "notes": null,
+      "needs_confirm": false
+    },
+    {
+      "name": "Bright blue Tommy Jeans tee",
+      "brand": "Tommy Jeans",
+      "category": "base",
+      "subtype": "tee",
+      "color": "bright_blue",
+      "formality": 2,
+      "warmth": 1,
+      "fit": null,
+      "flags": [],
+      "notes": null,
+      "needs_confirm": false
+    },
+    {
+      "name": "Blue Tommy Hilfiger tee",
+      "brand": "Tommy Hilfiger",
+      "category": "base",
+      "subtype": "tee",
+      "color": "bright_blue",
+      "formality": 2,
+      "warmth": 1,
+      "fit": null,
+      "flags": [],
+      "notes": "May be the bright blue TJ tee",
+      "needs_confirm": true
+    },
+    {
+      "name": "White graphic tee",
+      "brand": null,
+      "category": "base",
+      "subtype": "tee",
+      "color": "white",
+      "formality": 1,
+      "warmth": 1,
+      "fit": null,
+      "flags": [
+        "graphic"
+      ],
+      "notes": null,
+      "needs_confirm": true
+    },
+    {
+      "name": "Armani Exchange graphic tee",
+      "brand": "Armani Exchange",
+      "category": "base",
+      "subtype": "tee",
+      "color": "other",
+      "formality": 1,
+      "warmth": 1,
+      "fit": null,
+      "flags": [
+        "graphic"
+      ],
+      "notes": null,
+      "needs_confirm": false
+    },
+    {
+      "name": "White camp-collar short-sleeve shirt",
+      "brand": null,
+      "category": "base",
+      "subtype": "shirt",
+      "color": "off_white",
+      "formality": 3,
+      "warmth": 1,
+      "fit": null,
+      "flags": [],
+      "notes": null,
+      "needs_confirm": false
+    },
+    {
+      "name": "White button-down shirt",
+      "brand": null,
+      "category": "base",
+      "subtype": "shirt",
+      "color": "white",
+      "formality": 4,
+      "warmth": 1,
+      "fit": null,
+      "flags": [],
+      "notes": null,
+      "needs_confirm": true
+    },
+    {
+      "name": "White Lacoste sweatshirt",
+      "brand": "Lacoste",
+      "category": "mid",
+      "subtype": "sweatshirt",
+      "color": "white",
+      "formality": 3,
+      "warmth": 3,
+      "fit": null,
+      "flags": [
+        "logo_big"
+      ],
+      "notes": null,
+      "needs_confirm": false
+    },
+    {
+      "name": "Cream Tommy Jeans sweatshirt",
+      "brand": "Tommy Jeans",
+      "category": "mid",
+      "subtype": "sweatshirt",
+      "color": "cream",
+      "formality": 2,
+      "warmth": 3,
+      "fit": null,
+      "flags": [
+        "logo_big"
+      ],
+      "notes": null,
+      "needs_confirm": false
+    },
+    {
+      "name": "Navy Tommy Hilfiger sweatshirt",
+      "brand": "Tommy Hilfiger",
+      "category": "mid",
+      "subtype": "sweatshirt",
+      "color": "navy",
+      "formality": 2,
+      "warmth": 3,
+      "fit": null,
+      "flags": [],
+      "notes": null,
+      "needs_confirm": false
+    },
+    {
+      "name": "Dark Tommy Hilfiger sweatshirt (gold embroidery)",
+      "brand": "Tommy Hilfiger",
+      "category": "mid",
+      "subtype": "sweatshirt",
+      "color": "charcoal",
+      "formality": 3,
+      "warmth": 3,
+      "fit": null,
+      "flags": [],
+      "notes": null,
+      "needs_confirm": true
+    },
+    {
+      "name": "Navy Tommy Hilfiger zip hoodie",
+      "brand": "Tommy Hilfiger",
+      "category": "mid",
+      "subtype": "zip_hoodie",
+      "color": "navy",
+      "formality": 3,
+      "warmth": 3,
+      "fit": null,
+      "flags": [
+        "hooded"
+      ],
+      "notes": "Looks great on him",
+      "needs_confirm": false
+    },
+    {
+      "name": "Black Tommy Jeans zip hoodie",
+      "brand": "Tommy Jeans",
+      "category": "mid",
+      "subtype": "zip_hoodie",
+      "color": "black",
+      "formality": 2,
+      "warmth": 3,
+      "fit": null,
+      "flags": [
+        "hooded",
+        "logo_big"
+      ],
+      "notes": null,
+      "needs_confirm": false
+    },
+    {
+      "name": "Royal blue Calvin Klein zip hoodie",
+      "brand": "Calvin Klein",
+      "category": "mid",
+      "subtype": "zip_hoodie",
+      "color": "royal_blue",
+      "formality": 2,
+      "warmth": 3,
+      "fit": null,
+      "flags": [
+        "hooded",
+        "logo_big"
+      ],
+      "notes": null,
+      "needs_confirm": false
+    },
+    {
+      "name": "Navy fleece hoodie",
+      "brand": null,
+      "category": "mid",
+      "subtype": "hoodie",
+      "color": "navy",
+      "formality": 1,
+      "warmth": 4,
+      "fit": null,
+      "flags": [
+        "hooded"
+      ],
+      "notes": null,
+      "needs_confirm": true
+    },
+    {
+      "name": "Black Tommy Hilfiger puffer",
+      "brand": "Tommy Hilfiger",
+      "category": "jacket",
+      "subtype": "puffer",
+      "color": "black",
+      "formality": 3,
+      "warmth": 5,
+      "fit": null,
+      "flags": [
+        "bulky"
+      ],
+      "notes": null,
+      "needs_confirm": false
+    },
+    {
+      "name": "Burgundy Zara puffer",
+      "brand": "Zara",
+      "category": "jacket",
+      "subtype": "puffer",
+      "color": "burgundy",
+      "formality": 2,
+      "warmth": 5,
+      "fit": null,
+      "flags": [
+        "bulky"
+      ],
+      "notes": null,
+      "needs_confirm": true
+    },
+    {
+      "name": "Tan suede hooded bomber",
+      "brand": null,
+      "category": "jacket",
+      "subtype": "bomber",
+      "color": "tan",
+      "formality": 4,
+      "warmth": 3,
+      "fit": null,
+      "flags": [
+        "hooded"
+      ],
+      "notes": null,
+      "needs_confirm": true
+    },
+    {
+      "name": "Grey blazer",
+      "brand": null,
+      "category": "jacket",
+      "subtype": "blazer",
+      "color": "grey",
+      "formality": 5,
+      "warmth": 2,
+      "fit": null,
+      "flags": [],
+      "notes": null,
+      "needs_confirm": true
+    },
+    {
+      "name": "Blue slim jeans",
+      "brand": null,
+      "category": "pants",
+      "subtype": "jeans",
+      "color": "mid_blue_denim",
+      "formality": 3,
+      "warmth": 2,
+      "fit": "slim",
+      "flags": [],
+      "notes": null,
+      "needs_confirm": false
+    },
+    {
+      "name": "Light blue jeans",
+      "brand": null,
+      "category": "pants",
+      "subtype": "jeans",
+      "color": "light_blue_denim",
+      "formality": 2,
+      "warmth": 2,
+      "fit": null,
+      "flags": [],
+      "notes": null,
+      "needs_confirm": true
+    },
+    {
+      "name": "Black ripped jeans",
+      "brand": null,
+      "category": "pants",
+      "subtype": "jeans",
+      "color": "black",
+      "formality": 2,
+      "warmth": 2,
+      "fit": "baggy",
+      "flags": [
+        "ripped"
+      ],
+      "notes": null,
+      "needs_confirm": false
+    },
+    {
+      "name": "Charcoal jeans",
+      "brand": null,
+      "category": "pants",
+      "subtype": "jeans",
+      "color": "charcoal",
+      "formality": 3,
+      "warmth": 2,
+      "fit": null,
+      "flags": [],
+      "notes": null,
+      "needs_confirm": true
+    },
+    {
+      "name": "Black trousers",
+      "brand": null,
+      "category": "pants",
+      "subtype": "trousers",
+      "color": "black",
+      "formality": 4,
+      "warmth": 2,
+      "fit": null,
+      "flags": [],
+      "notes": null,
+      "needs_confirm": true
+    },
+    {
+      "name": "Black joggers",
+      "brand": null,
+      "category": "pants",
+      "subtype": "joggers",
+      "color": "black",
+      "formality": 1,
+      "warmth": 2,
+      "fit": null,
+      "flags": [],
+      "notes": null,
+      "needs_confirm": false
+    },
+    {
+      "name": "White Tommy sneakers",
+      "brand": "Tommy Hilfiger",
+      "category": "shoes",
+      "subtype": "sneakers",
+      "color": "white",
+      "formality": 3,
+      "warmth": 2,
+      "fit": null,
+      "flags": [],
+      "notes": null,
+      "needs_confirm": false
+    },
+    {
+      "name": "Olive Timberland suede shoes",
+      "brand": "Timberland",
+      "category": "shoes",
+      "subtype": "boots",
+      "color": "olive",
+      "formality": 3,
+      "warmth": 3,
+      "fit": null,
+      "flags": [],
+      "notes": null,
+      "needs_confirm": false
+    },
+    {
+      "name": "Black BALR high-tops",
+      "brand": "BALR",
+      "category": "shoes",
+      "subtype": "sneakers",
+      "color": "black",
+      "formality": 3,
+      "warmth": 2,
+      "fit": null,
+      "flags": [],
+      "notes": null,
+      "needs_confirm": false
+    },
+    {
+      "name": "Navy Lacoste shoes",
+      "brand": "Lacoste",
+      "category": "shoes",
+      "subtype": "sneakers",
+      "color": "navy",
+      "formality": 3,
+      "warmth": 2,
+      "fit": null,
+      "flags": [],
+      "notes": null,
+      "needs_confirm": false
+    },
+    {
+      "name": "Black athletic shoes",
+      "brand": null,
+      "category": "shoes",
+      "subtype": "sneakers",
+      "color": "black",
+      "formality": 1,
+      "warmth": 2,
+      "fit": null,
+      "flags": [],
+      "notes": "Worn out, gym only",
+      "needs_confirm": false
+    },
+    {
+      "name": "Black dress shoes",
+      "brand": null,
+      "category": "shoes",
+      "subtype": "dress_shoes",
+      "color": "black",
+      "formality": 5,
+      "warmth": 2,
+      "fit": null,
+      "flags": [],
+      "notes": null,
+      "needs_confirm": true
+    },
+    {
+      "name": "Black belt",
+      "brand": null,
+      "category": "accessory",
+      "subtype": "belt",
+      "color": "black",
+      "formality": 3,
+      "warmth": 1,
+      "fit": null,
+      "flags": [],
+      "notes": null,
+      "needs_confirm": false
+    },
+    {
+      "name": "Apple Watch",
+      "brand": "Apple",
+      "category": "accessory",
+      "subtype": "watch",
+      "color": "other",
+      "formality": 3,
+      "warmth": 1,
+      "fit": null,
+      "flags": [],
+      "notes": null,
+      "needs_confirm": false
+    },
+    {
+      "name": "Silver watch",
+      "brand": null,
+      "category": "accessory",
+      "subtype": "watch",
+      "color": "grey",
+      "formality": 4,
+      "warmth": 1,
+      "fit": null,
+      "flags": [],
+      "notes": null,
+      "needs_confirm": false
+    },
+    {
+      "name": "Dark-strap watch",
+      "brand": null,
+      "category": "accessory",
+      "subtype": "watch",
+      "color": "black",
+      "formality": 3,
+      "warmth": 1,
+      "fit": null,
+      "flags": [],
+      "notes": null,
+      "needs_confirm": false
+    }
+  ]
+}

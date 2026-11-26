@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  color-scheme: light dark;
+}
